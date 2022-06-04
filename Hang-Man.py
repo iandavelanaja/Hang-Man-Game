@@ -10,6 +10,7 @@ guessWord = ''
 global answer
 answer = ''
 
+
 # Start of Functions #
 
 
@@ -23,6 +24,24 @@ def hider(word):
         guessWord = guessWord + char
     guessWord = guessWord
     return guessWord
+
+
+def draw_hangman_1():
+    pass
+
+
+def answer_check(inputted_answer, hideWord, word):
+    hideWord = list(hideWord)
+    word = list(word)
+    if inputted_answer in word:
+        for i in range(len(word)):
+            char = word[i]
+            if char == inputted_answer:
+                hideWord[i] = inputted_answer
+        return hideWord
+    else:
+        print('call drawing hangman')
+
 
 # End of Functions #
 
@@ -131,25 +150,25 @@ while True:
 
     choice = input()
 
-    chances = True
-
     if (choice == 'a') or (choice == 'A'):  # ### Animals # #
         word = random.choice(celebList)
+        hideWord = hider(word)
         print('Your word is ', end='')
-        print(hider(word))
-        print(word)
+        print(hideWord)
+        print('for checking: ', word)
 
-        word = list(word)
-
-        while chances:
+        while True:
 
             answer = input('Input your guess (or 1 letter of your guess): ')
 
-            if len(answer) < 0:
+            if len(answer) <= 0:
+                print('Please input a valid (1) letter or your guess word.')
                 continue
             elif len(answer) > 1:
+                print('Please input a valid (1) letter or your guess word.')
                 continue
             elif len(answer) > len(word):
+                print('Please input a valid (1) letter or your guess word.')
                 continue
             elif len(answer) == len(word):
                 if answer == word:
@@ -159,18 +178,10 @@ while True:
                     print('Wrong. Try harder!')
                 continue
             elif len(answer) == 1:
-                if answer in word:
-                    for char in word:
-                        if char in word:
-                            char = char
-                        elif char == ' ':
-                            char = ' '
-                        else:
-                            char = '*'
-                        word.append(char)
+                x = answer_check(answer, hideWord, word)
+                print("".join(x))
+                hideWord = x[:]
 
-                    word = ''.join(word)
-                    print(word)
             else:
                 print('Try again!')
                 continue
