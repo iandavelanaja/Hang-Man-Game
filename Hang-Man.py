@@ -310,7 +310,7 @@ while True:
         hideWord = hider(word)
         print('Your word is ', end='')
         print(hideWord)
-        print('for checking: ', word)
+        #print('for checking: ', word)
 
         gameChoice(hideWord, word)
 
@@ -320,7 +320,7 @@ while True:
         hideWord = hider(word)
         print('Your word is ', end='')
         print(hideWord)
-        print('for checking: ', word)
+        #print('for checking: ', word)
 
         gameChoice(hideWord, word)
 
@@ -330,7 +330,7 @@ while True:
         hideWord = hider(word)
         print('Your word is ', end='')
         print(hideWord)
-        print('for checking: ', word)
+        #print('for checking: ', word)
 
         gameChoice(hideWord, word)
 
@@ -340,7 +340,7 @@ while True:
         hideWord = hider(word)
         print('Your word is ', end='')
         print(hideWord)
-        print('for checking: ', word)
+        #print('for checking: ', word)
 
         gameChoice(hideWord, word)
 
