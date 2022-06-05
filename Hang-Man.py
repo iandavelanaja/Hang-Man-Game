@@ -161,14 +161,14 @@ def gameChoice(hideWord, word):
                     if i == mistakes:
                         print()
                         print(f'Current word have {len(hideWord)} letters.')
-                        list_to_string(word)
+                        list_to_string(hideWord)
                         print(f'Category: {choice}')
                         hangman.mistake(i)
                         break
                     elif i == 6:
                         print()
                         print(f'Current word have {len(hideWord)} letters.')
-                        list_to_string(word)
+                        list_to_string(hideWord)
                         print(f'Category: {choice}')
                         hangman.mistake(7)
                         print()
